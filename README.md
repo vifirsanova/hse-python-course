@@ -23,6 +23,16 @@
 
 Пример: `git commit -m "Add helloworld.py"`
 
+`git push` - отправляем изменения на сервер
+
+Пример: `git push origin main`
+
+**Стандартный процесс**
+
+`git add .`
+
+`git commit -m "Add helloworld.py`
+
 `git push`
 
 
