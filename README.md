@@ -17,4 +17,12 @@
 
 `git status` - смотрим, какие изменения произошли
 
+`git reset` - отменяем незафиксированные изменения
+
+`git commit` - фиксируем изменения
+
+Пример: `git commit -m "Add helloworld.py"`
+
+`git push`
+
 
