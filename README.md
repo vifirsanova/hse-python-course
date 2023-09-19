@@ -1,3 +1,5 @@
+# Руководство по работе с GitHub
+
 ## Работа с git
 `git version` - проверяем установленную версию
 
@@ -35,4 +37,62 @@
 
 `git push`
 
+## Markdown
 
+```
+# Заголовки
+## Заголовки второго уровня
+### И т.д.
+```
+## Пример заголовка второго уровня
+### Пример заголовка третьего уровня
+
+```
+*курсив*  
+**жирный**  
+***жирный курсив***  
+~~зачеркнутый~~
+```
+
+*курсив*  
+**жирный**  
+***жирный курсив***  
+~~зачеркнутый~~
+
+```
+[Текст ссылки](https://www.github.com)
+```
+
+[Пример ссылки](https://www.github.com)
+
+```
+![Текст описания изображения](https://upload.wikimedia.org/wikipedia/commons/f/f0/Mops_oct09_cropped2.jpg)
+```
+![Mops_oct09.jpg: Dagur Brynjólfsson from Hafnarfjordur, Iceland;derivative work: Anka Friedrich, CC BY-SA 2.0 <https://creativecommons.org/licenses/by-sa/2.0>, via Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/f/f0/Mops_oct09_cropped2.jpg)
+Mops_oct09.jpg: Dagur Brynjólfsson from Hafnarfjordur, Iceland;derivative work: Anka Friedrich, CC BY-SA 2.0 <https://creativecommons.org/licenses/by-sa/2.0>, via Wikimedia Commons
+
+```
+# Пример оформления кода
+`print(“Hello world!”)`
+
+# Пример оформления блока кода
+\```
+print(“Hello world!”)
+\``` 
+```
+
+`print(“Hello world!”)`
+
+```
+print(“Hello world!”)
+``` 
+
+```
+| Шапка | таблицы |
+| --------- | ------------ |
+| Числа  | Слова      |
+```
+
+| Шапка | таблицы |
+| ----- | ------- |
+| Числа | Слова   |
