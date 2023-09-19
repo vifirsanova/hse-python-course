@@ -39,6 +39,8 @@
 
 ## Markdown
 
+**Заголовки**
+
 ```
 # Заголовки
 ## Заголовки второго уровня
@@ -47,6 +49,8 @@
 ## Пример заголовка второго уровня
 ### Пример заголовка третьего уровня
 
+**Форматирование текста**
+
 ```
 *курсив*  
 **жирный**  
@@ -58,6 +62,8 @@
 **жирный**  
 ***жирный курсив***  
 ~~зачеркнутый~~
+
+**Ссылки**
 
 ```
 [Текст ссылки](https://www.github.com)
@@ -65,11 +71,15 @@
 
 [Пример ссылки](https://www.github.com)
 
+**Изображения**
+
 ```
 ![Текст описания изображения](https://upload.wikimedia.org/wikipedia/commons/f/f0/Mops_oct09_cropped2.jpg)
 ```
 ![Mops_oct09.jpg: Dagur Brynjólfsson from Hafnarfjordur, Iceland;derivative work: Anka Friedrich, CC BY-SA 2.0 <https://creativecommons.org/licenses/by-sa/2.0>, via Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/f/f0/Mops_oct09_cropped2.jpg)
 Mops_oct09.jpg: Dagur Brynjólfsson from Hafnarfjordur, Iceland;derivative work: Anka Friedrich, CC BY-SA 2.0 <https://creativecommons.org/licenses/by-sa/2.0>, via Wikimedia Commons
+
+**Код**
 
 ```
 # Пример оформления кода
@@ -86,6 +96,8 @@ print(“Hello world!”)
 ```
 print(“Hello world!”)
 ``` 
+
+**Таблицы**
 
 ```
 | Шапка | таблицы |
