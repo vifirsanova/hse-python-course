@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample HTML Document</title>
+</head>
+<body>
+    <h1>Welcome to Data Cleaning</h1>
+    <p>This is a sample paragraph with <b>HTML artifacts</b> such as <i>bold</i> and <u>italic</u> text. Data cleaning is an essential process in preparing data for analysis. It involves various techniques to clean, transform, and preprocess data.</p>
+    <p>In data cleaning, it's important to remove <em>stop words</em> like "the", "and", "of", etc. Stop words are common words that are often filtered out from text data because they do not carry significant meaning.</p>
+    <p>Here's another paragraph. Sometimes text is in <strong>UPPERCASE</strong> or <em>lowercase</em>. It's important to standardize the text case to ensure consistency in the dataset. This can be achieved by converting all text to lowercase or uppercase.</p>
+    <p>It's crucial to handle <code>HTML entities</code> such as &lt;div&gt;, &lt;p&gt;, &amp;, etc. HTML entities are special characters or symbols that have specific meanings in HTML. They need to be properly handled to avoid issues during data processing.</p>
+    <p>Data cleaning also involves dealing with missing values. Missing values can occur due to various reasons such as incomplete data collection or data entry errors. It's essential to identify and handle missing values appropriately to avoid bias in the analysis.</p>
+    <p>Text data often contains noise such as punctuation marks, special characters, and digits. Removing noise from text data is necessary to focus on the meaningful content. Techniques such as regular expressions can be used for noise removal.</p>
+    <p>Another important aspect of data cleaning is deduplication. Duplicate records in a dataset can skew analysis results and lead to inaccurate conclusions. Identifying and removing duplicate records ensures data integrity and improves the quality of analysis.</p>
+    <p>After cleaning the data, it's essential to perform exploratory data analysis (EDA) to gain insights and identify patterns. EDA involves visualizing data, computing summary statistics, and exploring relationships between variables.</p>
+    <p>Once the data is cleaned and analyzed, it can be used for various purposes such as building machine learning models, making predictions, or generating insights to support decision-making processes.</p>
+</body>
+</html>
