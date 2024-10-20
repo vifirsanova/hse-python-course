@@ -1,0 +1,50 @@
+/* Styles for the upload container */
+.upload-container {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+}
+
+/* Style for the buttons */
+.upload-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.upload-btn:hover {
+  background-color: #45a049;
+}
+
+.submit-btn {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.submit-btn:hover {
+  background-color: #007B9A;
+}
+
+/* Result or status message */
+#result {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
