@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Documents or Parse URL</title>
+  <link rel="stylesheet" href="/static/styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+  <div class="upload-container">
+    <h1>Форма обратной связи</h1>
+
+    <!-- File upload form -->
+    <form id="uploadForm" action="/upload_doc" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" id="fileInput" accept=".txt" hidden>
+
+      <!-- Buttons for the user to click -->
+      <div class="button-group">
+        <button type="button" id="txtButton" class="upload-btn">Загрузить лог взаимодействия с языковой моделью</button>
+      </div>
+
+      <!-- Submit the file once a file is selected -->
+    </form>
+
+    <!-- URL parsing form -->
+    <form id="urlForm" action="/parse_url" method="POST">
+      <input type="text" name="url" id="urlInput" placeholder="Введите описание">
+      <button type="submit" class="submit-btn">Отправить на сервер</button>
+    </form>
+
+    <!-- Display result or status -->
+    <div id="result"></div>
+  </div>
+
+  <script src="/static/scripts.js"></script> <!-- Link to external JavaScript -->
+</body>
+</html>
