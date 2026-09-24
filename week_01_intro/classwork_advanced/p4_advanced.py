@@ -1,9 +1,59 @@
 """
 Презентация 4 — повышенный уровень.
-Задачи уровня 3 (форматирование счёта) и уровня 4 (decimal и fractions).
+Задачи уровня 3 (3.1–3.3, работа со строками и форматирование)
+и уровня 4 (decimal и fractions).
 
 Решения писать здесь. Тесты — в конце файла.
 """
+
+# ============================================================
+# Задача 3.1. Безопасный ввод числа
+# ============================================================
+# Условие:
+#   Запросите у пользователя число. Если введено не число,
+#   выведите сообщение об ошибке.
+#   Используйте методы строк и преобразование типов.
+#
+# Пример:
+#   In: 42
+#   Out: OK: 42
+#
+#   In: abc
+#   Out: Not a number
+#
+# Подсказка:
+#   s = input()
+#   if s.isdigit() or (s.startswith("-") and s[1:].isdigit()):
+#       n = int(s)
+#       print(f"OK: {n}")
+#   else:
+#       print("Not a number")
+
+def safe_input(s: str) -> str:
+    """Вернуть 'OK: <n>' или 'Not a number'."""
+    # TODO: реализовать
+    raise NotImplementedError
+
+
+# ============================================================
+# Задача 3.2. Разбор строки
+# ============================================================
+# Условие:
+#   Запросите строку вида "имя:возраст". Разделите её по символу :
+#   и выведите приветствие с возрастом, увеличенным на 1.
+#
+# Пример:
+#   In: Ivan:24
+#   Out: Hello, Ivan! Next year you are 25.
+#
+# Подсказка:
+#   Используйте split(":") и int().
+
+def parse_name_age(s: str) -> str:
+    """Вернуть приветствие с возрастом +1."""
+    # TODO: реализовать
+    raise NotImplementedError
+
 
 # ============================================================
 # Задача 3.3. Форматирование счёта
@@ -120,6 +170,16 @@ def split_bill(account: str, guests: int) -> dict:
 # ============================================================
 
 if __name__ == "__main__":
+    # 3.1
+    assert safe_input("42") == "OK: 42"
+    assert safe_input("-7") == "OK: -7"
+    assert safe_input("abc") == "Not a number"
+    assert safe_input("3.14") == "Not a number"
+
+    # 3.2
+    assert parse_name_age("Ivan:24") == "Hello, Ivan! Next year you are 25."
+    assert parse_name_age("Anna:30") == "Hello, Anna! Next year you are 31."
+
     # 3.3
     receipt = format_receipt("apple", 15.5, 3)
     assert "apple" in receipt
@@ -143,4 +203,4 @@ if __name__ == "__main__":
     assert res["share"] == res["share"].quantize(res["share"])
     assert res["total"] >= res["over"]
 
-    print("p2_advanced: все тесты пройдены")
+    print("p4_advanced: все тесты пройдены")
