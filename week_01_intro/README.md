@@ -60,5 +60,3 @@ docs: update README
 python task_01.py        # assert-тесты в конце файла
 pytest test_task_01.py -v  # если используете pytest
 ```
-```
-```
