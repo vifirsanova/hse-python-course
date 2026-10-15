@@ -348,7 +348,7 @@ upper = [line.upper() for line in logs]
 
 ---
 
-## 8. Быстрые шаблоны
+## 8. Шаблоны
 
 ```python
 # Сумма
