@@ -1,49 +1,51 @@
 # p8_task1.py — Домашняя работа 8, продвинутый уровень.
-# Задача 1. Дедупликация событий с приоритетом.
+# Задача 1. Инкрементальный агрегатор логов из файла.
 #
-# События — список кортежей (event_id, priority, payload).
-# Одинаковые event_id считаются дубликатами; нужно оставить
-# одно событие на id — с максимальным приоритетом
-# (при равенстве — первое встреченное).
+# Файл лога содержит строки вида:
+#     "<timestamp> <user> <action>"
+# Нужно прочитать файл построчно, не загружая всё в память,
+# и построить сводку.
 #
 # Подзадачи:
-#   7.1. Вернуть множество всех event_id.
-#   7.2. Вернуть словарь {event_id: лучший приоритет}.
-#   7.3. Вернуть список уникальных событий (по одному на id)
-#        в порядке первого появления id, с лучшим приоритетом.
-#   7.4. Вернуть кортеж (event_id, payload) события с максимальным
-#        приоритетом среди уникальных; при равенстве — меньший event_id.
-#        Если событий нет — (None, None).
-#   7.5. Вернуть словарь {payload: количество уникальных id},
-#        у которых этот payload; порядок ключей — по первому появлению.
+#   6.1. Вернуть словарь {user: количество строк}, читая файл итеративно
+#        (через for line in f, без readlines).
+#   6.2. Вернуть множество действий (третий столбец) из файла.
+#   6.3. Вернуть словарь {user: множество действий} — какие действия
+#        делал каждый пользователь (без дубликатов).
+#   6.4. Вернуть кортеж (user, action, count) — самая частая пара
+#        (пользователь, действие); при равенстве — лексикографически
+#        меньшая пара. Считать через while по списку пар.
+#   6.5. Вернуть список пользователей, у которых есть действие "login",
+#        но нет "logout" (в порядке первого появления в файле).
+#        Использовать enumerate и множества.
 
 
-def all_ids(events: list[tuple[int, int, str]]) -> set[int]:
-    """Множество всех event_id."""
+def user_line_counts(path: str) -> dict[str, int]:
+    """{user: количество строк} через итеративное чтение файла."""
     # TODO: реализовать
     pass
 
 
-def best_priority(events: list[tuple[int, int, str]]) -> dict[int, int]:
-    """{event_id: максимальный приоритет}."""
+def all_actions(path: str) -> set[str]:
+    """Множество всех действий из файла."""
     # TODO: реализовать
     pass
 
 
-def unique_events(events: list[tuple[int, int, str]]) -> list[tuple[int, int, str]]:
-    """Уникальные события с лучшим приоритетом в порядке первого появления."""
+def actions_by_user(path: str) -> dict[str, set[str]]:
+    """{user: множество действий}."""
     # TODO: реализовать
     pass
 
 
-def top_event(events: list[tuple[int, int, str]]) -> tuple[int | None, str | None]:
-    """(event_id, payload) события с максимальным приоритетом."""
+def top_user_action(path: str) -> tuple[str | None, str | None, int]:
+    """Самая частая пара (user, action) и её count."""
     # TODO: реализовать
     pass
 
 
-def payload_id_counts(events: list[tuple[int, int, str]]) -> dict[str, int]:
-    """{payload: число уникальных id} в порядке первого появления payload."""
+def logged_in_not_out(path: str) -> list[str]:
+    """Пользователи с login, но без logout, в порядке появления."""
     # TODO: реализовать
     pass
 
@@ -53,30 +55,44 @@ def payload_id_counts(events: list[tuple[int, int, str]]) -> dict[str, int]:
 # ============================================================
 
 if __name__ == "__main__":
-    EVENTS = [
-        (1, 5, "a"),
-        (2, 3, "b"),
-        (1, 7, "a"),
-        (3, 7, "c"),
-        (2, 3, "b"),
-        (1, 2, "a"),
-    ]
+    import os
+    import tempfile
 
-    assert all_ids(EVENTS) == {1, 2, 3}
-    assert all_ids([]) == set()
+    with tempfile.TemporaryDirectory() as tmp:
+        path = os.path.join(tmp, "app.log")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write("10:00 alice login\n")
+            f.write("10:01 bob login\n")
+            f.write("10:02 alice upload\n")
+            f.write("10:03 alice login\n")
+            f.write("10:04 carol login\n")
+            f.write("10:05 bob logout\n")
+            f.write("10:06 carol upload\n")
 
-    assert best_priority(EVENTS) == {1: 7, 2: 3, 3: 7}
-    assert best_priority([]) == {}
+        assert user_line_counts(path) == {"alice": 3, "bob": 2, "carol": 2}
 
-    assert unique_events(EVENTS) == [(1, 7, "a"), (2, 3, "b"), (3, 7, "c")]
-    assert unique_events([]) == []
+        assert all_actions(path) == {"login", "upload", "logout"}
 
-    assert top_event(EVENTS) == (1, "a")
-    assert top_event([(2, 1, "x"), (1, 1, "y")]) == (1, "y")
-    assert top_event([]) == (None, None)
+        assert actions_by_user(path) == {
+            "alice": {"login", "upload"},
+            "bob": {"login", "logout"},
+            "carol": {"login", "upload"},
+        }
 
-    assert payload_id_counts(EVENTS) == {"a": 1, "b": 1, "c": 1}
-    assert payload_id_counts([(1, 1, "x"), (2, 1, "x"), (3, 1, "y")]) == {"x": 2, "y": 1}
-    assert payload_id_counts([]) == {}
+        assert top_user_action(path) == ("alice", "login", 2)
 
-    print("p8_task7 (advanced): все assert-тесты пройдены.")
+        # login есть у всех, logout только у bob -> alice и carol
+        assert logged_in_not_out(path) == ["alice", "carol"]
+
+    # пустой файл
+    with tempfile.TemporaryDirectory() as tmp:
+        path = os.path.join(tmp, "empty.log")
+        open(path, "w", encoding="utf-8").close()
+
+        assert user_line_counts(path) == {}
+        assert all_actions(path) == set()
+        assert actions_by_user(path) == {}
+        assert top_user_action(path) == (None, None, 0)
+        assert logged_in_not_out(path) == []
+
+    print("p8_task6 (advanced): все assert-тесты пройдены.")
