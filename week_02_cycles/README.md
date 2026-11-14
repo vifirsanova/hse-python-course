@@ -36,6 +36,7 @@ docs: update README
 - `classwork_base/p7_base.py`
 - `homework/p6_base/task_01.py`, `task_02.py`, `task_03.py`, `task_04.py`, `task_05.py`
 - `homework/p7_base/task_01.py`, `task_02.py`, `task_03.py`, `task_04.py`, `task_05.py`
+- `homework/p8_base/task_01.py`, `task_02.py`, `task_03.py`, `task_04.py`, `task_05.py`
 
 ### Повышенный уровень
 
@@ -43,6 +44,7 @@ docs: update README
 - `classwork_advanced/p7_base.py`
 - `homework/p6_advanced/task_01.py`, `task_02.py`, `task_03.py`, `task_04.py`, `task_05.py`
 - `homework/p7_advanced/task_01.py`, `task_02.py`, `task_03.py`, `task_04.py`, `task_05.py`
+- `homework/p8_advanced/task_01.py`, `task_02.py`, `task_03.py`, `task_04.py`, `task_05.py`
 
 ## Запуск тестов (для повышенного уровня)
 
